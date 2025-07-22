@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import logo from "@/assets/bigwig digital logo (11).png";
 import {
@@ -9,7 +8,6 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,7 +19,8 @@ import {
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
 import { FaEnvelope } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 const Nav: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -127,14 +126,14 @@ const Nav: React.FC = () => {
       <div className="px-4 md:px-16 container mx-auto flex justify-between items-center py-3 w-full">
         {/* Logo */}
         <div className="flex items-center font-bold text-2xl">
-          <a href="/">
+          <Link href="/">
             <Image
               src={logo}
               alt="Logo"
               className="w-44 md:w-48 transition duration-300"
-              draggable={false}
+              draggable="false"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -191,14 +190,14 @@ const Nav: React.FC = () => {
           )}
 
           <li className="flex space-x-3 items-center">
-            <a href="/contact">
+            <Link href="/contact">
               <button className="relative overflow-hidden group rounded-lg py-2 hover:text-white transition">
                 <span className="relative z-10 border-2 border-[#D10B0B] px-3 py-1 rounded-md text-white hover:text-white">
                   Contact Us
                 </span>
                 <span className="absolute inset-0 bg-[#D10B0B] transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out" />
               </button>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -214,42 +213,42 @@ const Nav: React.FC = () => {
           <ul className="flex flex-col space-y-5 text-white font-medium">
             <li className="flex items-center gap-2">
               <LayoutDashboard size={18} />
-              <a href="/services">
+              <Link href="/services">
                 <button>Services</button>
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <LayoutDashboard size={18} />
-              <a href="/our-works">
+              <Link href="/our-works">
                 <button>Our Works</button>
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <Info size={18} />
-              <a href="/about">
+              <Link href="/about">
                 <button>About</button>
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <FileText size={18} />
-              <a href="/blogs">
+              <Link href="/blogs">
                 <button>Blog</button>
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <Users size={18} />
-              <a href="/clients">
+              <Link href="/clients">
                 <button>Clients</button>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact"
                 className="flex items-center gap-2 py-2 rounded-md text-[#D10B0B] transition"
               >
                 <Phone size={18} />
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
