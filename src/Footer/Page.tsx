@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
   faInstagram,
-  faAdn,
+  faLinkedin,
   faPinterest,
   faXTwitter,
   faYoutube,
@@ -10,7 +10,7 @@ import {
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import logo from "@/assets/bigwig digital logo (11).png";
 import line2 from "@/assets/line2.png";
-// import { a } from "react-router-dom";
+import Link from "next/link";
 import Image from "next/image";
 
 function Footer() {
@@ -69,11 +69,11 @@ function Footer() {
               </div>
             </div>
 
-            {/* Quick as, Resources, Contact Info - 2/3 */}
+            {/* Quick Links, Resources, Contact Info - 2/3 */}
             <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {/* Quick as */}
+              {/* Quick Links */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Quick as</h3>
+                <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
                 <ul className="space-y-2 text-sm">
                   {[
                     { name: "Careers", path: "/career" },
@@ -81,14 +81,14 @@ function Footer() {
                     { name: "FAQ", path: "/faq" },
                     { name: "T&C", path: "/terms" },
                     { name: "Privacy Policy", path: "/privacy-policy" },
-                  ].map((a) => (
-                    <li key={a.path}>
-                      <a
-                        href={a.path}
+                  ].map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        href={link.path}
                         className="hover:text-blue-600 transition"
                       >
-                        {a.name}
-                      </a>
+                        {link.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -106,9 +106,9 @@ function Footer() {
                     { name: "Manufacturer" },
                     { name: "Events" },
                     { name: "Astrology" },
-                  ].map((a, index) => (
+                  ].map((link, index) => (
                     <li key={index}>
-                      <p>{a.name}</p>
+                      <p>{link.name}</p>
                     </li>
                   ))}
                 </ul>
@@ -137,7 +137,7 @@ function Footer() {
 
           {/* Bottom Bar */}
           <div className="border-t border-gray-500 pt-6 flex flex-col items-center gap-6 md:flex-row md:justify-between">
-            {/* Social as */}
+            {/* Social Links */}
             <div className="flex space-x-4">
               {[
                 {
@@ -161,8 +161,8 @@ function Footer() {
                   color: "#000000",
                 },
                 {
-                  icon: faAdn,
-                  href: "https://www.aedin.com/company/106698073/admin/dashboard/",
+                  icon: faLinkedin,
+                  href: "https://www.linkedin.com/company/106698073/admin/dashboard/",
                   color: "#0077B5",
                 },
                 {
