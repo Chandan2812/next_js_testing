@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import logo from "@/assets/bigwig digital logo (11).png";
 import {
